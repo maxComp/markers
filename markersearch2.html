@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="markers2.css" />
+<script>
+var markerTopic = [[17,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [23,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [27,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [5,14,0,0,0,0,0,0,0,0,0,0,0,0,0],                  
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [17,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [29,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [20,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                              
+                 [29,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [18,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [18,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [29,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [20,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [6,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [27,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [28,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [6,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [18,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,14,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [23,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [28,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [17,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [17,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [26,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [18,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [12,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                         
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [28,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [17,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [29,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [11,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [20,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [32,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [8,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [20,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [6,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [21,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [25,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [4,14,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [16,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [22,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [7,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [26,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [26,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [20,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [19,27,0,0,0,0,0,0,0,0,0,0,0,0,0],                  
+                 [23,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [2,27,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [30,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [24,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [15,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [18,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [14,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [13,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                 
+                 [31,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [27,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0],                  
+                 [19,0,0,0,0,0,0,0,0,0,0,0,0,0,0]                
+                ];
+var markerFound = [
+'<a href="11000yearsofindianoccupation.html">11,000 years of Indian Occupation</a><br><br>',   
+'<a href="18thstreetbridge.html">18th Street Bridge</a><br><br>',   
+'<a href="1910fire.html">1910 Fire</a><br><br>', 
+'<a href="airmailservice.html">Air Mail Service</a><br><br>', 
+'<a href="alexanderross.html">Alexander Ross</a><br><br>', 
+'<a href="americanfalls274.html">American Falls</a><br><br>', 
+'<a href="americanfallspowerplant.html">American Falls Power Plant</a><br><br>', 
+'<a href="antandyellowjacket.html">Ant and Yellowjacket</a><br><br>', 
+'<a href="arrowrockdam.html">Arrowrock Dam</a><br><br>',  
+'<a href="asasmithmission.html ">Asa Smith Mission</a><br><br>', 
+'<a href="atomsforpeace.html ">Atoms for Peace</a><br><br>', 
+'<a href="bannockpass.html ">Bannock Pass</a><br><br>',
+'<a href="bannockwar.html">Bannock War</a><br><br>',  
+'<a href="bankrobbers.html">Bank Robbers</a><br><br>', 
+'<a href="basquecountry.html">Basque Country</a><br><br>',                   
+'<a href="bayviewlimekilns.html">Bayview Lime Kilns</a><br><br>', 
+'<a href="bearlake384.html">Bear Lake</a><br><br>',    
+'<a href="bearriverbattle.html">Bear River Battle</a><br><br>',    
+'<a href="bearriverlava.html">Bear River Lava</a><br><br>',    
+'<a href="beavercanyon.html">Beaver Canyon</a><br><br>',    
+'<a href="beaverdick273.html">Beaver Dick</a><br><br>', 
+'<a href="beaverdicksferry.html">Beaver Dick&apos;s Ferry</a><br><br>', 
+'<a href="bigbutte.html">Big Butte</a><br><br>', 
+'<a href="bighill.html">Big Hill</a><br><br>', 
+'<a href="blackcanyondam.html">Black Canyon Dam</a><br><br>',
+'<a href="britishsettlers.html">British Settlers</a><br><br>', 
+'<a href="bonnersferry.html">Bonner&apos;s Ferry</a><br><br>',      
+'<a href="brownleeferry.html">Brownlee Ferry</a><br><br>',     
+'<a href="bsu.html">Boise State University</a><br><br>', 
+'<a href="burke.html">Burke</a><br><br>', 
+'<a href="calderalookout.html">Caldera Lookout</a><br><br>', 
+'<a href="caldronlinn.html">Caldron Linn</a><br><br>', 
+'<a href="campconner.html">Camp Conner</a><br><br>', 
+'<a href="canalgulch.html">Canal Gulch</a><br><br>', 
+'<a href="cariboomountain.html">Cariboo Mountain</a><br><br>', 
+'<a href="castlerock.html">Castlerock</a><br><br>', 
+'<a href="charcoalkilns.html">Charcoal Kilns</a><br><br>', 
+'<a href="cheifpocatello.html">Chief Pocatello</a><br><br>', 
+'<a href="chesterfield.html">Chesterfield</a><br><br>', 
+'<a href="cityofrocks.html">City of Rocks</a><br><br>', 
+'<a href="claytonsmelter.html">Clayton Smelter</a><br><br>', 
+'<a href="collegeofidaho.html">College of Idaho</a><br><br>', 
+'<a href="companytown.html">Company Town</a><br><br>', 
+'<a href="coeurdalenelake.html">Coeur d&apos;Alene Lake</a><br><br>',
+'<a href="cotesdefile.html">Cote&apos;s Defile</a><br><br>', 
+'<a href="coyotesfishnet.html">Coyotes Fishnet</a><br><br>', 
+'<a href="craigmont.html">Craigmont</a><br><br>', 
+'<a href="csi.html">College of Southern Idaho</a><br><br>', 
+'<a href="davidthompson.html">David Thompson</a><br><br>', 
+'<a href="desmetmission.html">Desmet Mission</a><br><br>', 
+'<a href="diamondfieldjack.html">Diamondfield Jack</a><br><br>', 
+'<a href="diamondgulch.html">Diamond Gulch</a><br><br>', 
+'<a href="diversiondam.html">Diversion Dam</a><br><br>', 
+'<a href="eaglerockferry.html">Eaglerock Ferry</a><br><br>', 
+'<a href="earthquakes.html">Earthquakes</a><br><br>', 
+'<a href="elephanthunters.html">Elephant Hunters</a><br><br>', 
+'<a href="elkcity.html">Elk City</a><br><br>', 
+'<a href="elkcitywagonroad.html">Elk City Wagon Road</a><br><br>',
+'<a href="emigrantroad.html">Emigrant Road</a><br><br>', 
+'<a href="emigranttrails.html">Emigrant Trails</a><br><br>', 
+'<a href="emilegrandjean.html">Emile Grandjean</a><br><br>', 
+'<a href="emmaedwards.html">Emma Edwards</a><br><br>', 
+'<a href="fabulousflorence.html">Fabulous Florence</a><br><br>', 
+'<a href="farragutstatepark.html">Farragut State Park</a><br><br>',
+'<a href="firstpublicbuilding.html">First Public Building</a><br><br>',  
+'<a href="firstrailroad.html">Idaho&apos;s First Railroad</a><br><br>', 
+'<a href="fishingfalls.html">Fishing Falls</a><br><br>', 
+'<a href="fortbonneville.html">Fort Bonneville</a><br><br>',
+'<a href="forthenry.html">Fort Henry</a><br><br>', 
+'<a href="fortlemhi.html">Fort Lemhi</a><br><br>',
+'<a href="fossilbeds.html">Fossil Beds</a><br><br>',  
+'<a href="freezeouthill.html">Freezeout Hill</a><br><br>', 
+'<a href="friscomill.html">Frisco Mill</a><br><br>', 
+'<a href="fromansferry.html">Froman&apos;s Ferry</a><br><br>', 
+'<a href="galena.html">Galena</a><br><br>', 
+'<a href="gibbonsville.html">Gibbonsville</a><br><br>', 
+'<a href="gilmore.html">Gilmore</a><br><br>', 
+'<a href="givenssprings.html">Givens Springs</a><br><br>', 
+'<a href="glaciallakes.html">Glacial Lakes</a><br><br>', 
+'<a href="glennsferry.html">Glenn&apos;s Ferry</a><br><br>', 
+'<a href="goddinsriver.html">Goddin&apos;s River</a><br><br>',
+'<a href="goldmines.html">Gold Mines</a><br><br>',
+'<a href="goldrushferry.html">Goldrush Ferry</a><br><br>',
+'<a href="goodalescutoff305.html">Goodalescutoff</a><br><br>',  
+'<a href="goodalescutoff354.html">Goodalescutoff</a><br><br>', 
+'<a href="grimescreek.html">Grimes&apos; Creek</a><br><br>', 
+'<a href="hansenbridge.html">Hansen Bridge</a><br><br>', 
+'<a href="harpster.html">Harpster</a><br><br>',
+'<a href="harrimanstatepark.html">Harriman State Park</a><br><br>', 
+'<a href="hatchhouse.html">Hatch House</a><br><br>', 
+'<a href="hooperspring.html">Hooper Spring</a><br><br>', 
+'<a href="horseshoebend.html">Horseshoe Bend</a><br><br>', 
+'<a href="hudspethscutoff161.html">Hudspeth&apos;s Cutoff</a><br><br>', 
+'<a href="hudspethscutoff169.html">Hudspeth&apos;s Cutoff</a><br><br>', 
+'<a href="hunt.html">Hunt</a><br><br>', 
+'<a href="hydraulicmining.html">Hydraulic Mining</a><br><br>', 
+'<a href="idahocity.html">Idaho City</a><br><br>', 
+'<a href="idahohermits.html">Idaho Hermits</a><br><br>',
+'<a href="idahome.html">Idahhome</a><br><br>',
+'<a href="idahosoldesttown.html">Idaho&apos;s Oldest Town</a><br><br>', 
+'<a href="indianhouses.html">Indian Houses</a><br><br>', 
+'<a href="isu.html">Idaho State University</a><br><br>', 
+'<a href="johnbidwell.html">John Bidwell</a><br><br>', 
+'<a href="johncolter.html">John Colter</a><br><br>', 
+'<a href="johndaysriver.html">John Day&apos;s River</a><br><br>', 
+'<a href="johngrey.html">John Grey</a><br><br>', 
+'<a href="johnmullan.html">John Mullan</a><br><br>', 
+'<a href="johnsilcott.html">John Silcott</a><br><br>', 
+'<a href="kelloggsjackass.html">Kellogg&apos;s Jackass</a><br><br>', 
+'<a href="kootenaitribeofidaho.html">Kootenai Tribe of Idaho</a><br><br>',
+'<a href="kullyspellhouse.html">Kullyspell House</a><br><br>',
+'<a href="lakebonneville.html">Lake Bonneville</a><br><br>',
+'<a href="lakependoreille.html">Lake Pend Oreille</a><br><br>',
+'<a href="lakesteamers.html">Lake Steamers</a><br><br>',
+'<a href="lapwaimission.html">Lapwai Mission</a><br><br>',  
+'<a href="lavaformations.html">Lava Formations</a><br><br>', 
+'<a href="lavahotsprings.html">Lava Hot Springs</a><br><br>', 
+'<a href="lawyerscanyon.html">Lawyer&apos;s Canyon</a><br><br>', 
+'<a href="leadsilvermines.html">Lead-Silver Mines</a><br><br>', 
+'<a href="lenoretram.html">Lenore Tram</a><br><br>', 
+'<a href="lewisandclarkindex.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark127.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark249.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark261.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark269.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark325.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark488.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark489.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisandclark492.html">Lewis and Clark</a><br><br>', 
+'<a href="lewisclarkstatecollege.html">Lewis Clark State College</a><br><br>', 
+'<a href="lewistonhill.html">Lewiston Hill</a><br><br>', 
+'<a href="loggingrailroads.html">Logging Railroads</a><br><br>', 
+'<a href="lolosummit.html">Lolo Summit</a><br><br>',
+'<a href="lolotrailcrossing.html">Lolo Trail Crossing</a><br><br>', 
+'<a href="longcamp.html">Long Camp</a><br><br>', 
+'<a href="longvalley.html">Long Valley Ambush</a><br><br>', 
+'<a href="lookingglass.html">Looking Glass</a><br><br>', 
+'<a href="lostriver.html">Lost River</a><br><br>', 
+'<a href="lowerboise.html">Lower Boise</a><br><br>', 
+'<a href="lowman.html">Lowman</a><br><br>', 
+'<a href="macdonaldsbattle.html">Macdonald&apos;s Battle</a><br><br>', 
+'<a href="mackenziespost.html">Mackenzie&apos;s Post</a><br><br>', 
+'<a href="magicdam.html">Magic Dam</a><br><br>', 
+'<a href="magicreservoir.html">Magic Reservoir</a><br><br>', 
+'<a href="mariedorian.html">Marie Dorian</a><br><br>', 
+'<a href="marketlake.html">Market Lake</a><br><br>', 
+'<a href="mcauleysroad.html">McAuley&apos;s Road</a><br><br>', 
+'<a href="mccroskeypark.html">McCroskey Park</a><br><br>', 
+'<a href="menanbuttes.html">Menan Buttes</a><br><br>', 
+'<a href="mesaorchards.html">Mesa Orchards</a><br><br>', 
+'<a href="michelbourdon.html">Michel Bourdon</a><br><br>', 
+'<a href="milnerdam.html">Milner Dam</a><br><br>', 
+'<a href="minidokadam.html">Minidoka Dam</a><br><br>', 
+'<a href="morescreek.html">More&apos;s Creek</a><br><br>', 
+'<a href="mountborah.html">Mount Borah</a><br><br>', 
+'<a href="mountidaho.html">Mount Idaho</a><br><br>', 
+'<a href="mullanroad.html">Mullan Road</a><br><br>', 
+'<a href="mullantree.html">Mullan Tree</a><br><br>', 
+'<a href="murraygoldfields.html">Murray Gold Fields</a><br><br>', 
+'<a href="newplymouth.html">New Plymouth</a><br><br>', 
+'<a href="nezpercetrail369.html">Nezperce Trail</a><br><br>', 
+'<a href="nezpercetrail448.html">Nezperce Trail</a><br><br>', 
+'<a href="nezpercevillage.html">Nezperce Village</a><br><br>', 
+'<a href="nezpercewar259.html">Nezperce War</a><br><br>', 
+'<a href="nezpercewar294.html">Nezperce War</a><br><br>', 
+'<a href="nezpercewar38.html">Nezperce War</a><br><br>', 
+'<a href="nezpercewar427.html">Nezperce War</a><br><br>', 
+'<a href="nnu.html">Northwest Nazarene University</a><br><br>', 
+'<a href="nuclearreactors.html">Nuclear Reactors</a><br><br>', 
+'<a href="olddeltasediments.html">Old Delta Sediments</a><br><br>', 
+'<a href="oldfortboise.html">Old Fort Boise</a><br><br>', 
+'<a href="oldmissionofsacredheart.html">Old Mission of Sacred Heart</a><br><br>', 
+'<a href="oldrailroads.html">Old Railroads</a><br><br>', 
+'<a href="oregontrailindex.html">Oregon Trail</a><br><br>', 
+'<a href="oregontrail198.html">Oregon Trail</a><br><br>', 
+'<a href="oregontrail338.html">Oregon Trail</a><br><br>', 
+'<a href="oregontrail375.html">Oregon Trail</a><br><br>', 
+'<a href="orofinocity.html">Oro Fino City</a><br><br>', 
+'<a href="owyheecounty.html">Owyhee Country</a><br><br>', 
+'<a href="packerjohn.html">Packer John</a><br><br>', 
+'<a href="paris.html">Paris</a><br><br>', 
+'<a href="paristabernacle.html">Paris Tabernacle</a><br><br>', 
+'<a href="paynesferry.html">Payne&apos;s Ferry</a><br><br>', 
+'<a href="pearl.html">Pearl</a><br><br>', 
+'<a href="pendoreillecity.html">Pend Oreille City</a><br><br>', 
+'<a href="piercecourthouse.html">Pierce Courthouse</a><br><br>', 
+'<a href="pierrejdesmet.html">Pierre J. Desmet</a><br><br>', 
+'<a href="pierreshole.html">Pierre&apos;s Hole</a><br><br>', 
+'<a href="prehistoricman270.html">Prehistoric Man</a><br><br>', 
+'<a href="prehistoricman276.html">Prehistoric Man</a><br><br>', 
+'<a href="purcelltrench.html">Purcell Trench</a><br><br>', 
+'<a href="railroadtrestles.html">Railroad Trestles</a><br><br>', 
+'<a href="railroadtunnels.html">Railroad Tunnels</a><br><br>', 
+'<a href="rangewars.html">Range Wars</a><br><br>', 
+'<a href="rattlesnakestation.html">Rattlesnake Station</a><br><br>', 
+'<a href="redrockpass.html">Redrock Pass</a><br><br>', 
+'<a href="rickscollege.html">Ricks College</a><br><br>', 
+'<a href="rockcreekstation.html">Rock Creek Station</a><br><br>', 
+'<a href="sacajawea.html">Sacajawea</a><br><br>', 
+'<a href="saintjosephindianmission.html">Saint Joseph Indian Mission</a><br><br>', 
+'<a href="saintjosephsmission.html">Saint Joseph&apos;s Mission</a><br><br>', 
+'<a href="salmondam.html">Salmon Dam</a><br><br>', 
+'<a href="salmonfalls.html">Salmon Falls</a><br><br>', 
+'<a href="salmonfestival.html">Salmon Festival</a><br><br>', 
+'<a href="salmonriver292.html">Salmon River</a><br><br>', 
+'<a href="salmonriver298.html">Salmon River</a><br><br>', 
+'<a href="salmonrivercanyon.html">Salmon River Canyon</a><br><br>', 
+'<a href="sawtellsranch.html">Sawtell&apos;s Ranch</a><br><br>', 
+'<a href="sawtoothcity.html">Sawtooth City</a><br><br>', 
+'<a href="seneacquoteen.html">Seneacquoteen</a><br><br>', 
+'<a href="sevendevilsmines.html">Seven Devils Mines</a><br><br>', 
+'<a href="shoshonefalls.html">Shoshone Falls</a><br><br>', 
+'<a href="shoshonehistoricdistrict.html">Shoshone Historic District</a><br><br>', 
+'<a href="skilifts.html">Ski Lifts</a><br><br>', 
+'<a href="slaterville.html">Slaterville</a><br><br>', 
+'<a href="smithstradingpost.html">Smith&apos;s Trading Post</a><br><br>', 
+'<a href="snakeriver.html">Snake River</a><br><br>', 
+'<a href="sodasprings.html">Soda Springs</a><br><br>', 
+'<a href="spaldingsmission.html">Spalding&apos;s Mission</a><br><br>', 
+'<a href="splashdam.html">Splash Dams</a><br><br>', 
+'<a href="stanleyrangerstation.html">Stanley Ranger Station</a><br><br>', 
+'<a href="starrhsferry.html">Starrh&apos;s Ferry</a><br><br>', 
+'<a href="steamboats.html">Steamboats</a><br><br>', 
+'<a href="steamershoshone.html">Steamer Shoshone</a><br><br>', 
+'<a href="submergedvalley.html">Submerged Valley</a><br><br>', 
+'<a href="sunshineminedisaster.html">Sunshine Mine Disaster</a><br><br>', 
+'<a href="taylorsbridge.html">Taylor&apos;s Bridge</a><br><br>', 
+'<a href="tetonflood.html">Teton Flood</a><br><br>', 
+'<a href="tetonrange.html">Teton Range</a><br><br>', 
+'<a href="thefirstcapital.html">The First Capital</a><br><br>', 
+'<a href="theoldtollroad.html">The Old Toll Road</a><br><br>', 
+'<a href="theoregontrail.html">The Oregon Trail</a><br><br>',
+'<a href="thethreetetons.html">The Three Tetons</a><br><br>', 
+'<a href="theutterdisaster.html">Utter Disaster</a><br><br>', 
+'<a href="thomasfork.html">Thomas Fork</a><br><br>', 
+'<a href="thousandsprings.html">Thousand Springs</a><br><br>', 
+'<a href="threebuttes.html">Three Buttes</a><br><br>', 
+'<a href="tollgate.html">Tollgate</a><br><br>', 
+'<a href="treatyrock.html">Treaty Rock</a><br><br>', 
+'<a href="tsceminicum.html">Tsceminicum</a><br><br>', 
+'<a href="twinsprings.html">Twin Springs</a><br><br>',
+'<a href="ui.html">University of Idaho</a><br><br>', 
+'<a href="utahnorthernrailway.html">Utah Northern Railway</a><br><br>',
+'<a href="viennaghosttown.html">Vienna Ghost Town</a><br><br>',
+'<a href="volcaniccalderas.html">Volcanic Calderas</a><br><br>', 
+'<a href="wallace.html">Wallace</a><br><br>', 
+'<a href="wardmassacre.html">Ward Massacre</a><br><br>', 
+'<a href="wareaglemines.html">War Eagle Mines</a><br><br>', 
+'<a href="whitebirdgrade.html">Whitebird Grade</a><br><br>', 
+'<a href="whitehousepond.html">Whitehouse Pond</a><br><br>', 
+'<a href="wildhorsetrail.html">Wild Horse Trail</a><br><br>', 
+'<a href="williamcraig.html">William Craig</a><br><br>', 
+'<a href="willowcreekslide.html">Willow Creek Slide</a><br><br>', 
+'<a href="woodrivermines.html">Wood River Mines</a><br><br>', 
+'<a href="worldslargestmill.html">World&apos;s Largest Mill</a><br><br>' 
+                 ]; 
+var amen = [];
+var numChecked = 0;
+var htmlText = " ";
+
+    function clearAll() {  
+         sessionStorage.clear('myUrl');
+                     location.reload();                   
+}
+function checkAll() {
+     var boxes = document.getElementsByTagName('input');
+     for (var i = 0; i < boxes.length; i++) {
+          if (boxes[i].type == 'checkbox')
+                boxes[i].checked = true; }               
+        }  
+function checkReload(){        
+    
+    document.getElementById("ParksFound").innerHTML = sessionStorage.getItem('myUrl');
+    document.getElementById("ParksFound").scrollIntoView();
+}
+
+function parkSelect() { 
+     var boxes = document.getElementsByTagName('input');
+     for (var i = 0; i < boxes.length; i++) {
+          if (boxes[i].type == 'checkbox')
+                if (boxes[i].checked == true){
+                    amen[numChecked]=i+1;
+                    numChecked = numChecked + 1;                                        
+                    boxes[i].checked = false;} 
+     }                     
+     var l = 0;     
+     var amenTest = "";
+     var amenPark = "";     
+     var selectedPark = [];
+     var nonDupPark = []; 
+     // number of parks
+     for (var j = 0; j < 255; j++) {                
+          for (var k = 0; k < 40; k++) {
+               for (var i = 0; i < numChecked; i++) {
+                      amenTest = String(amen[i]);
+                      amenPark = String(markerTopic[j][k]);                      
+                      if(amenTest.valueOf() == amenPark.valueOf()){        
+                         selectedPark[l]=j;                         
+                         l=l+1;                          
+                         break; }                                              
+                }
+           }
+       }
+    selectedPark.sort();
+    k=0;
+    var count = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];   
+    var lastN=selectedPark[0];
+    for (i = 0; i< selectedPark.length; i++) {
+        if(selectedPark[i]==lastN){ 
+              count[k]=count[k]+1;              
+              nonDupPark[k]=selectedPark[i];              
+         }else{
+             k=k+1;
+             count[k]=count[k]+1;
+             nonDupPark[k]=selectedPark[i];
+             lastN=selectedPark[i]; 
+             }
+    }      
+      //alert(amen.length);
+     // alert(nonDupPark.length);
+      //alert(count.length);
+      
+      for (i = 0; i < nonDupPark.length; i++) {           
+           if(count[i] == amen.length){
+              k=nonDupPark[i];              
+              htmlText=htmlText+markerFound[k];                                     
+            }                   
+      }
+     document.getElementById("ParksFound").innerHTML = htmlText;
+     sessionStorage.setItem('myUrl', htmlText);
+     document.getElementById("ParksFound").scrollIntoView();
+   for (i = 0; i < amen.length; i++) {   
+        delete amen[i];
+   } 
+   for (i = 0; i < nonDupPark.length; i++) {   
+        delete nonDupPark[i];
+   } 
+    for (i = 0; i < selectedPark.length; i++) {   
+        delete selectedPark[i];
+   }
+   for (i = 0; i < count.length; i++) {   
+        delete count[i];
+   } 
+   numChecked = 0;
+                       
+}  
+</script>
+<style>
+h5 ,th, button{background:SkyBlue;}
+button {font-size: 12px;}
+#ParksFound {
+ text-align: center;
+}
+
+</style>
+</head> 
+<body onload="checkReload()">
+<table border="3px" style="font-size: 12px; ">
+<tr>
+<th colspan="2" align=center>
+     Select a topic to search for, then click Search to find markers which contain that topic: 
+</th>
+<tr>
+<td>        
+            <div class="amenitiesColumn">             
+             <div><input id="865" type="checkbox" value="Rivers/Creeks" /><label for="865">Rivers/Creeks</label></div>
+             <div><input id="861" type="checkbox" value="Dams" /><label for="861">Dams</label></div>
+             <div><input id="738" type="checkbox" value="Lakes" /><label for="738">Lakes</label></div>
+             <div><input id="925" type="checkbox" value="Springs" /><label for="925">Springs</label></div>
+             <div><input id="848" type="checkbox" value="Falls" /><label for="848">Falls</label></div>
+             
+             <div><input id="850" type="checkbox" value="Fish" /><label for="850">Fish</label></div>
+             <div><input id="923" type="checkbox" value="Ferries" /><label for="923">Ferries</label></div>
+             <div><input id="739" type="checkbox" value="Wars" /><label for="739">Wars</label></div>
+             
+             <div><input id="935" type="checkbox" value="Battles" /><label for="935">Battles</label></div>
+             <div><input id="922" type="checkbox" value="Mountains/Hills/Buttes" /><label for="922">Mtns/Buttes</label></div>
+             <div><input id="852" type="checkbox" value="Oregon Trail" /><label for="852">Oregon Trail</label></div>
+             <div><input id="867" type="checkbox" value="Lewis & Clark" /><label for="867">Lewis & Clark</label></div>
+             <div><input id="740" type="checkbox" value="Trails/Roads" /><label for="740">Trails/Roads</label></div>
+             <div><input id="936" type="checkbox" value="Towns" /><label for="936">Towns</label></div> 
+             <div><input id="936" type="checkbox" value="Ghost Towns" /><label for="936">Ghost Towns</label></div>        
+             <div><input id="862" type="checkbox" value="Missions" /><label for="862">Missions</label></div>
+             
+             
+            </div>
+</td>
+<td>
+
+            <div class="amenitiesColumn">
+             
+             <div><input id="870" type="checkbox" value="Tribes" /><label for="870">Tribes</label></div>
+             <div><input id="851" type="checkbox" value="Lava" /><label for="851">Lava</label></div>
+             <div><input id="853" type="checkbox" value="Mines/Mills" /><label for="853">Mines/Mills</label></div>
+             
+             <div><input id="855" type="checkbox" value="Pass" /><label for="855">Passes</label></div>
+             <div><input id="864" type="checkbox" value="Canyon" /><label for="864">Canyons</label></div>
+             
+             <div><input id="869" type="checkbox" value="Forts/Stations" /><label for="869">Forts/Stations</label></div>
+             <div><input id="857" type="checkbox" value="Bridges" /><label for="857">Bridges</label></div>
+             <div><input id="858" type="checkbox" value="Railroads" /><label for="858">Railroads</label></div>
+             <div><input id="859" type="checkbox" value="Posts/Other" /><label for="859">Posts/Other</label></div>
+             <div><input id="742" type="checkbox" value="Steamboats" /><label for="742">Steamboats</label></div>
+             <div><input id="868" type="checkbox" value="Disasters" /><label for="868">Disasters</label></div>
+             <div><input id="866" type="checkbox" value="Parks" /><label for="866">Parks</label></div>
+             <div><input id="860" type="checkbox" value="Kilns/Atoms" /><label for="860">Kilns/Atoms</label></div>
+             <div><input id="863" type="checkbox" value="Schools" /><label for="863">Schools</label></div>
+              <div><input id="934" type="checkbox" value="People" /><label for="934">People</label></div>
+             <div><input id="934" type="checkbox" value="Groups" /><label for="934">Groups</label></div>
+           </div>  
+</td>
+</tr>
+</table>
+        
+        <div id="parksSearchControls">            
+            <button onclick="parkSelect()"  id="parksClearButton">Search</button>
+            <button onclick="clearAll()"  id="parksClearButton">Clear</button>
+            
+           
+        </div>
+    
+
+    <h5>Markers Found</h5>
+    <div id="ParksFound">
+    </div>
+    <div id="ParksEnd">
+    </div>
+    
+</body>
+</html>
