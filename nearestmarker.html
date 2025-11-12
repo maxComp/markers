@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="parkscss2.css" />
+<script>
+var getLat=0;
+var getLong=0;
+var getPlace=" ";
+var getUrl=" ";
+var locLat=0;
+var locLong=0;
+var dist=0;
+var dist2=0;
+var nearest=" ";
+var dist3=9999999;
+function getData()
+{ 
+var data = [
+ {
+   "Latitude": 42.6278818,
+   "Longitude": -114.4063779,
+   "Title": "BONNEVILLE FLOOD",
+   "Marker": "<a href='redrockpass.html'>Redrock Pass</a><br><br>"
+ },
+ {
+   "Latitude": 42.61990383,
+   "Longitude": -112.0061991,
+   "Title": "LAVA HOT SPRINGS",
+   "Marker": "<a href='lavahotsprings.html'>Lava Hot Springs</a><br><br>"
+ },
+ {
+   "Latitude": 42.80033534,
+   "Longitude": -112.2898706,
+   "Title": "IDAHO'S FIRST RAILROAD",
+   "Marker": "<a href='firstrailroad.html'>First Railroad</a><br><br>"
+ },
+ {
+   "Latitude": 42.01823666,
+   "Longitude": -111.8042547,
+   "Title": "IDAHO'S OLDEST TOWN",
+   "Marker": "<a href='idahosoldesttown.html'>Oldest Town</a><br><br>"
+ },
+ {
+   "Latitude": 42.53352012,
+   "Longitude": -113.8713409,
+   "Title": "STARRH'S FERRY",
+    "Marker": "<a href='starrhsferry.html'>Starrhs Ferry</a><br><br>"
+ },
+{
+   "Latitude": 46.02513231,
+   "Longitude": -116.3279529,
+   "Title": "NEZ PERCE WAR",
+   "Marker": "<a href='nezpercewar.html'>Nerze Perce War</a><br><br>"
+ },
+ {
+   "Latitude": 47.36501692,
+   "Longitude": -116.6803888,
+   "Title": "SAINT JOSEPH INDIAN MISSION",
+   "Marker": "<a href='saintjosephindianmission.html'>Saint Joseph Indian Mission</a><br><br>"
+ },
+ {
+   "Latitude": 44.1402276,
+   "Longitude": -113.905002,
+   "Title": "MOUNT BORAH",
+   "Marker": "<a href='mountborah.html'>Mount Borah</a><br><br>"
+ },
+ {
+   "Latitude": 43.602667,
+   "Longitude": -116.1935163,
+   "Title": "AIRMAIL SERVICE",
+   "Marker": "<a href='airmailservice.html'>Air Mail</a><br><br>"
+ },
+ {
+   "Latitude": 43.66315147,
+   "Longitude": -116.6137426,
+   "Title": "THE WARD MASSACRE",
+   "Marker": "<a href='wardmassacre.html'>Ward Massacre</a><br><br>"
+ },
+ {
+   "Latitude": 43.77940994,
+   "Longitude": -116.9327522,
+   "Title": "MARIE DORIAN",
+   "Marker": "<a href='mariedorian.html'>Marie Dorian</a><br><br>"
+ },
+ {
+   "Latitude": 43.77943595,
+   "Longitude": -116.9327998,
+   "Title": "OLD FORT BOISE",
+   "Marker": "<a href='oldfortboise.html'>Old Fort Boise</a><br><br>"
+ },
+ {
+   "Latitude": 45.87564458,
+   "Longitude": -116.2282878,
+   "Title": "CAMAS PRAIRIE",
+   "Marker": "<a href='camasprairie.html'>Camas Prairie</a><br><br>"
+ },
+ {
+   "Latitude": 46.45244207,
+   "Longitude": -116.8183913,
+   "Title": "SPALDING'S MISSION",
+   "Marker": "<a href='spaldingsmission.html'>Spalding&apos;s Mission</a><br><br>"
+ },
+ {
+   "Latitude": 46.41714879,
+   "Longitude": -116.8027841,
+   "Title": "LAPWAI MISSION",
+   "Marker": "<a href='lapwaimission.html'>Lapwai Mission</a><br><br>"
+ },
+ {
+   "Latitude": 45.40467795,
+   "Longitude": -113.9914554,
+   "Title": "LEWIS AND CLARK",
+   "Marker": "<a href='lewisandclark122.html'>Lewis and Clark</a><br><br>"
+ },
+ {
+   "Latitude": 45.24384112,
+   "Longitude": -113.8941477,
+   "Title": "HISTORIC LEMHI COUNTY",
+   "Marker": "<a href='historiclemhicounty.html'>Historic Lemhi County</a><br><br>"
+ },
+ {
+   "Latitude": 45.05207391,
+   "Longitude": -113.6863086,
+   "Title": "LEWIS AND CLARK",
+   "Marker": "<a href='lewisandclark127.html'>Lewis and Clark</a><br><br>"
+ },
+ {
+   "Latitude": 44.98425042,
+   "Longitude": -113.6509061,
+   "Title": "FORT LEMHI",
+   "Marker": "<a href='fortlemhi.html'>Fort Lemhi</a><br><br>"
+ },
+ {
+   "Latitude": 43.872819,
+   "Longitude": -111.7439068,
+   "Title": "FORT HENRY",
+   "Marker": "<a href='forthenry.html'>Fort Henry</a><br><br>"
+ },
+ {
+   "Latitude": 43.68424789,
+   "Longitude": -111.1104428,
+   "Title": "PIERRE'S HOLE",
+   "Marker": "<a href='pierreshole.html'>Pierre&apos;s Hole</a><br><br>"
+ },
+ {
+   "Latitude": 47.55166476,
+   "Longitude": -116.3579104,
+   "Title": "OLD MISSION OF THE SACRED HEART",
+   "Marker": "<a href='oldmissionofsacredheart.html'>Old Mission of Sacred Heart</a><br><br>"
+ },
+ {
+   "Latitude": 48.22004274,
+   "Longitude": -116.2647952,
+   "Title": "KULLYSPELL HOUSE",
+  "Marker": "<a href='kullyspellhouse.html'>Kullyspell House</a><br><br>"
+},
+ {
+   "Latitude": 48.65256424,
+   "Longitude": -116.3451876,
+   "Title": "WILD HORSE TRAIL",
+   "Marker": '<a href="wildhorsetrail.html">Wild Horse Trail</a><br><br>'
+ },
+ {
+   "Latitude": 43.55205933,
+   "Longitude": -116.0985302,
+   "Title": "THE OREGON TRAIL",
+   "Marker": '<a href="theoregontrail.html">The Oregon Trail</a><br><br>'
+ },
+ {
+   "Latitude": 44.52503093,
+   "Longitude": -114.2086347,
+   "Title": "ATOMS FOR PEACE",
+   "Marker": '<a href="atomsforpeace.html ">Atoms for Peace</a><br><br>' 
+ },
+ {
+   "Latitude": 46.49182152,
+   "Longitude": -115.7990763,
+   "Title": "CANAL GULCH",
+   "Marker": '<a href="canalgulch.html">Canal Gulch</a><br><br>' 
+ },
+ {
+   "Latitude": 43.48070299,
+   "Longitude": -114.2714488,
+   "Title": "WOOD RIVER MINES",
+   "Marker": '<a href="woodrivermines.html">Wood River Mines</a><br><br>' 
+ },
+ {
+   "Latitude": 44.517841,
+   "Longitude": -116.043624,
+   "Title": "LONG VALLEY AMBUSH",
+   "Marker": '<a href="longvalley.html">Long Valley Ambush</a><br><br>' 
+ },
+ {
+   "Latitude": 46.47818274,
+   "Longitude": -115.7989865,
+   "Title": "ORO FINO CITY",
+   "Marker": '<a href="orofinocity.html">Oro Fino City</a><br><br>' 
+ },
+ {
+   "Latitude": 42.21399925,
+   "Longitude": -111.0664229,
+   "Title": "THOMAS FORK",
+   "Marker": '<a href="thomasfork.html">Thomas Fork</a><br><br>' 
+ },
+ {
+   "Latitude": 42.65808801,
+   "Longitude": -111.6263893,
+   "Title": "SODA SPRINGS",
+   "Marker": '<a href="sodasprings.html">Soda Springs</a><br><br>' 
+ },
+ {
+   "Latitude": 42.25277672,
+   "Longitude": -111.255812,
+   "Title": "SMITH'S TRADING POST",
+   "Marker": '<a href="smithstradingpost.html">Smith&apos;s Trading Post</a><br><br>' 
+ },
+ {
+   "Latitude": 42.62994931,
+   "Longitude": -111.9174355,
+   "Title": "HUDSPETH'S CUTOFF",
+   "Marker": '<a href="hudspethscutoff161.html">Hudspeth&apos;s Cutoff</a><br><br>'  
+ },
+ {
+   "Latitude": 46.20077161,
+   "Longitude": -116.4148781,
+   "Title": "LAWYER'S CANYON",
+    "Marker": '<a href="lawyerscanyon.html">Lawyer&apos;s Canyon</a><br><br>'  
+ },
+ {
+   "Latitude": 47.6150062,
+   "Longitude": -116.52125,
+   "Title": "MULLAN TREE",
+    "Marker":  '<a href="mullantree.html">Mullan Tree</a><br><br>' 
+ },
+ {
+   "Latitude": 48.70134763,
+   "Longitude": -116.3141244,
+   "Title": "BONNER'S FERRY",
+    "Marker": '<a href="bonnersferry.html">Bonner&apos;s Ferry</a><br><br>'       
+ },
+ {
+   "Latitude": 42.74590307,
+   "Longitude": -114.8510283,
+   "Title": "THOUSAND SPRINGS",
+    "Marker": '<a href="thousandsprings.html">Thousand Springs</a><br><br>'  
+ },
+ {
+   "Latitude": 46.46198225,
+   "Longitude": -116.9925909,
+   "Title": "THE FIRST CAPITAL",
+    "Marker":  '<a href="thefirstcapital.html">The First Capital</a><br><br>' 
+ },
+ {
+   "Latitude": 45.82767917,
+   "Longitude": -115.4398199,
+   "Title": "ELK CITY",
+    "Marker":  '<a href="elkcity.html">Elk City</a><br><br>'
+ },
+ {
+   "Latitude": 42.29029316,
+   "Longitude": -113.4163472,
+   "Title": "HUDSPETH'S CUTOFF",
+    "Marker":  '<a href="hudspethscutoff169.html">Hudspeth&apos;s Cutoff</a><br><br>' 
+ },
+ {
+   "Latitude": 47.61850233,
+   "Longitude": -116.6512319,
+   "Title": "COEUR D'ALENE LAKE",
+    "Marker": '<a href="coeurdalenelake.html">Coeur d&apos;Alene Lake</a><br><br>'
+ },
+{
+   "Latitude": 42.35437428,
+   "Longitude": -112.0497575,
+   "Title": "RED ROCK PASS",
+   "Marker": '<a href="redrockpass.html">Redrock Pass</a><br><br>' 
+ },
+ {
+   "Latitude": 42.59851861,
+   "Longitude": -114.454271,
+   "Title": "SHOSHONE FALLS",
+   "Marker": '<a href="shoshonefalls.html">Shoshone Falls</a><br><br>' 
+ },
+ {
+   "Latitude": 45.54772825,
+   "Longitude": -116.3042003,
+   "Title": "FABULOUS FLORENCE", 
+   "Marker": '<a href="fabulousflorence.html">Fabulous Florence</a><br><br>' 
+ },
+ {
+   "Latitude": 45.54786824,
+   "Longitude": -116.304143,
+   "Title": "HYDRAULIC MINING",
+   "Marker": '<a href="hydraulicmining.html">Hydraulic Mining</a><br><br>' 
+ },
+ {
+   "Latitude": 46.46198225,
+   "Longitude": -116.9925909,
+   "Title": "MACKENZIE'S POST",
+   "Marker": '<a href="mackenziespost.html">Mackenzie&apos;s Post</a><br><br>' },
+{
+   "Latitude": 48.17439004,
+   "Longitude": -116.7442676,
+   "Title": "SENEACQUOTEEN",
+   "Marker": '<a href="seneacquoteen.html">Seneacquoteen</a><br><br>' 
+ },
+ {
+   "Latitude": 44.9556625,
+   "Longitude": -116.2246007,
+   "Title": "PACKER JOHN'S CABIN",
+   "Marker": '<a href="packerjohn.html">Packer John</a><br><br>' 
+ },
+ {
+   "Latitude": 44.82850185,
+   "Longitude": -116.9033862,
+   "Title": "BROWNLEE FERRY",
+   "Marker": '<a href="brownleeferry.html">Brownlee Ferry</a><br><br>'     
+ },
+ {
+   "Latitude": 43.8239098,
+   "Longitude": -115.8384602,
+   "Title": "IDAHO CITY",
+   "Marker": '<a href="idahocity.html">Idaho City</a><br><br>' 
+ },
+ {
+   "Latitude": 43.72568768,
+   "Longitude": -115.951127,
+   "Title": "GRIME'S CREEK",
+   "Marker": '<a href="grimescreek.html">Grimes&apos; Creek</a><br><br>' 
+ },
+ {
+   "Latitude": 43.40734706,
+   "Longitude": -116.8654202,
+   "Title": "OWYHEE COUNTRY",
+   "Marker": '<a href="owyheecounty.html">Owyhee Country</a><br><br>'  
+ },
+{
+  "Latitude": 42.9275,
+  "Longitude": -114.7329,
+  "Title": "Home",
+  "Marker": '<a href="x.html">Home</a><br><br>'
+},
+{
+   "Latitude": 43.59329131,
+   "Longitude": -116.3944726,
+   "Title": "INITIAL POINT",
+   "Marker": '<a href="initialpoint.html">Initial Point</a><br><br>'
+ },
+ {
+   "Latitude": 43.34094944,
+   "Longitude": -116.6032556,
+   "Title": "STEAMER SHOSHONE",
+   "Marker": '<a href="steamershoshone.html">Steamer Shoshone</a><br><br>'
+ },
+ {
+   "Latitude": 43.19779734,
+   "Longitude": -115.5548486,
+   "Title": "RATTLESNAKE STATION",
+   "Marker": '<a href="rattlesnakestation.html">Rattlesnake Station</a><br><br>' 
+ },
+ {
+   "Latitude": 43.25079942,
+   "Longitude": -115.5796338,
+   "Title": "TOLL GATE",
+   "Marker": '<a href="tollgate.html">Tollgate</a><br><br>'
+ }, 
+  {
+   "Latitude": 42.9540492,
+   "Longitude": -115.3084742,
+   "Title": "OREGON TRAIL",
+   "Marker": '<a href="oregontrail198.html">Oregon Trail</a><br><br>' 
+ },
+ {
+   "Latitude": 42.95390173,
+   "Longitude": -115.3084721,
+   "Title": "GLENN'S FERRY",
+   "Marker": '<a href="glennsferry.html">Glenn&apos;s Ferry</a><br><br>' 
+ },
+ {
+   "Latitude": 42.74590297,
+   "Longitude": -114.8510282,
+   "Title": "SALMON FALLS",
+   "Marker": '<a href="salmonfalls.html">Salmon Falls</a><br><br>' 
+ },
+ {
+   "Latitude": 42.69908911,
+   "Longitude": -114.8568402,
+   "Title": "PAYNE'S FERRY",
+   "Marker": '<a href="paynesferry.html">Payne&apos;s Ferry</a><br><br>' 
+ },
+ {
+   "Latitude": 42.50995299,
+   "Longitude": -113.9242018,
+   "Title": "MILNER DAM",
+   "Marker": '<a href="milnerdam.html">Milner Dam</a><br><br>' 
+ },
+ {
+   "Latitude": 42.14112825,
+   "Longitude": -111.9115975,
+   "Title": "BEAR RIVER BATTLE",
+   "Marker": '<a href="bearriverbattle.html">Bear River Battle</a><br><br>'    
+ },
+{
+   "Latitude": 42.65808801,
+   "Longitude": -111.6263893,
+   "Title": "CAMP CONNOR",
+   "Marker": '<a href="campconner.html">Camp Conner</a><br><br>'
+ },
+ {
+   "Latitude": 42.6512066,
+   "Longitude": -111.7022559,
+   "Title": "JOHN BIDWELL",
+   "Marker": '<a href="johnbidwell.html">John Bidwell</a><br><br>'
+ },
+ {
+   "Latitude": 42.6512066,
+   "Longitude": -111.7022559,
+   "Title": "BEAR RIVER LAVA",
+   "Marker":'<a href="bearriverlava.html">Bear River Lava</a><br><br>'    
+ },
+ {
+   "Latitude": 44.35664049,
+   "Longitude": -112.1861811,
+   "Title": "BEAVER CANYON",
+   "Marker": '<a href="beavercanyon.html">Beaver Canyon</a><br><br>'
+ },
+ {
+   "Latitude": 43.49329213,
+   "Longitude": -112.0451775,
+   "Title": "TAYLOR'S BRIDGE",
+   "Marker": '<a href="taylorsbridge.html">Taylor&apos;s Bridge</a><br><br>'
+ },
+ {
+   "Latitude": 43.49328557,
+   "Longitude": -112.0451616,
+   "Title": "EAGLE ROCK FERRY",
+   "Marker": '<a href="eaglerockferry.html">Eaglerock Ferry</a><br><br>'
+ },
+ {
+   "Latitude": 43.79250089,
+   "Longitude": -111.1109291,
+   "Title": "JOHN COLTER",
+   "Marker": '<a href="johncolter.html">John Colter</a><br><br>'
+ },
+ {
+   "Latitude": 43.78333269,
+   "Longitude": -112.9934995,
+   "Title": "JOHN DAY'S RIVER",
+   "Marker": '<a href="johndaysriver.html">John Day&apos;s River</a><br><br>'
+ },
+ {
+   "Latitude": 43.9966301,
+   "Longitude": -113.7593301,
+   "Title": "GODDIN'S RIVER",
+   "Marker": '<a href="goddinsriver.html">Goddin&apos;s River</a><br><br>'
+ },
+ {
+   "Latitude": 44.45660831,
+   "Longitude": -113.2413298,
+   "Title": "GILMORE",
+   "Marker": '<a href="gilmore.html">Gilmore</a><br><br>'
+ },
+ {
+   "Latitude": 43.89256901,
+   "Longitude": -114.7852487,
+   "Title": "VIENNA GHOST TOWN",
+   "Marker": '<a href="viennaghosttown.html">Vienna Ghost Town</a><br><br>'
+ },
+ {
+   "Latitude": 44.27118081,
+   "Longitude": -114.7353509,
+   "Title": "YANKEE FORK MINES",
+   "Marker": '<a href="yankeeforkmines.html">Yankee Fork Mines</a><br><br>'
+ },
+ {
+   "Latitude": 44.81406319,
+   "Longitude": -113.2719315,
+   "Title": "BANNOCK PASS",
+   "Marker": '<a href="bannockpass.html ">Bannock Pass</a><br><br>'
+ },
+ {
+   "Latitude": 45.05211178,
+   "Longitude": -113.6863429,
+   "Title": "SACAJAWEA",
+   "Marker": '<a href="sacajawea.html">Sacajawea</a><br><br>'
+ },
+ {
+   "Latitude": 42.15601819,
+   "Longitude": -114.6739303,
+   "Title": "SALMON DAM",
+   "Marker": '<a href="salmondam.html">Salmon Dam</a><br><br>'
+},
+ {
+   "Latitude": 45.24388016,
+   "Longitude": -113.8941741,
+   "Title": "FORT BONNEVILLE",
+   "Marker": '<a href="fortbonneville.html">Fort Bonneville</a><br><br>'
+ },
+ {
+   "Latitude": 45.54465188,
+   "Longitude": -113.9295847,
+   "Title": "GIBBONSVILLE",
+   "Marker": '<a href="gibbonsville.html">Gibbonsville</a><br><br>'
+ },
+ {
+   "Latitude": 46.63522359,
+   "Longitude": -114.5801496,
+   "Title": "LOLO SUMMIT",
+   "Marker": '<a href="lolosummit.html">Lolo Summit</a><br><br>'
+ },
+ {
+   "Latitude": 47.14952463,
+   "Longitude": -116.9109265,
+   "Title": "DESMET MISSION",
+   "Marker": '<a href="desmetmission.html">Desmet Mission</a><br><br>'
+ },
+ {
+   "Latitude": 46.4439305,
+   "Longitude": -116.2147918,
+   "Title": "LEWIS AND CLARK",
+   "Marker": '<a href="lewisandclark249.html">Lewis and Clark</a><br><br>'
+ },
+ {
+   "Latitude": 46.50984394,
+   "Longitude": -116.5617857,
+   "Title": "SLATERVILLE",
+   "Marker": '<a href="slaterville.html">Slaterville</a><br><br>'
+ },
+ {
+   "Latitude": 47.4624908,
+   "Longitude": -115.708333,
+   "Title": "1910 FIRE",
+   "Marker": '<a href="1910fire.html">1910 Fire</a><br><br>'
+ },
+ {
+   "Latitude": 47.73924906,
+   "Longitude": -117.0337737,
+   "Title": "PURCELL TRENCH",
+   "Marker": '<a href="purcelltrench.html">Purcell Trench</a><br><br>'
+ },
+ {
+   "Latitude": 42.14112825,
+   "Longitude": -111.9115975,
+   "Title": "UTAH NORTHERN RAILWAY",
+   "Marker": '<a href="utahnorthernrailway.html">Utah Northern Railway</a><br><br>'
+},
+{
+   "Latitude": 46.07636044,
+   "Longitude": -115.9752679,
+   "Title": "NEZ PERCE WAR",
+   "Marker": '<a href="nezpercewar259.html">Nezperce War</a><br><br>'
+},
+ {
+   "Latitude": 46.37588658,
+   "Longitude": -115.9515009,
+   "Title": "LEWIS AND CLARK",
+  "Marker": '<a href="lewisandclark261.html">Lewis and Clark</a><br><br>'  
+},
+{
+   "Latitude": 46.44208285,
+   "Longitude": -116.893043,
+   "Title": "COYOTE'S FISHNET",
+   "Marker": '<a href="coyotesfishnet.html">Coyotes Fishnet</a><br><br>'
+ },
+ {
+   "Latitude": 43.99418136,
+   "Longitude": -116.9354853,
+   "Title": "SNAKE RIVER",
+   "Marker": '<a href="snakeriver.html">Snake River</a><br><br>'
+ },
+ {
+   "Latitude": 46.44601163,
+   "Longitude": -116.8436739,
+   "Title": "ANT AND YELLOWJACKET",
+   "Marker": '<a href="antandyellowjacket.html">Ant and Yellowjacket</a><br><br>'
+},
+ {
+   "Latitude": 43.62658258,
+   "Longitude": -115.9877663,
+   "Title": "THE OLD TOLL ROAD",
+   "Marker": '<a href="theoldtollroad.html">The Old Toll Road</a><br><br>'
+},
+ {
+   "Latitude": 44.10214776,
+   "Longitude": -111.4531322,
+   "Title": "THE THREE TETONS",
+   "Marker": '<a href="thethreetetons.html">The Three Tetons</a><br><br>'
+ },
+ {
+   "Latitude": 47.65930684,
+   "Longitude": -116.728377,
+   "Title": "LAKE STEAMERS",
+   "Marker": '<a href="lakesteamers.html">Lake Steamers</a><br><br>'
+ },
+ {
+   "Latitude": 45.65991142,
+   "Longitude": -113.977238,
+   "Title": "LEWIS AND CLARK",
+   "Marker": '<a href="lewisandclark269.html">Lewis and Clark</a><br><br>' 
+  },
+ {
+   "Latitude": 44.14281081,
+   "Longitude": -112.8999637,
+   "Title": "PREHISTORIC MAN",
+   "Marker": '<a href="prehistoricman270.html">Prehistoric Man</a><br><br>'
+},
+{
+   "Latitude": 43.82630716,
+   "Longitude": -111.9065299,
+   "Title": "BEAVER DICK",
+   "Marker": '<a href="beaverdick273.html">Beaver Dick</a><br><br>'
+ },
+ {
+   "Latitude": 42.77526583,
+   "Longitude": -112.8590842,
+   "Title": "AMERICAN FALLS",
+   "Marker": '<a href="americanfalls274.html">American Falls</a><br><br>'
+ },
+ {
+   "Latitude": 42.2253256,
+   "Longitude": -111.4009686,
+   "Title": "PARIS",
+   "Marker": '<a href="paris.html">Paris</a><br><br>'
+ },
+ {
+   "Latitude": 42.66231932,
+   "Longitude": -114.285114,
+   "Title": "PREHISTORIC MAN",
+   "Marker": '<a href="prehistoricman276.html">Prehistoric Man</a><br><br>'
+ },
+ {
+   "Latitude": 43.3422217,
+   "Longitude": -114.8633185,
+   "Title": "BANNOCK WAR",
+   "Marker": '<a href="bannockwar.html">Bannock War</a><br><br>'
+ },
+ {
+   "Latitude": 43.91444031,
+   "Longitude": -116.19815,
+   "Title": "HORSESHOE BEND",
+   "Marker": '<a href="horseshoebend.html">Horseshoe Bend</a><br><br>'
+ },
+ {
+   "Latitude": 46.69542209,
+   "Longitude": -117.0082357,
+   "Title": "UNIVERSITY OF IDAHO",
+   "Marker": '<a href="ui.html">University of Idaho</a><br><br>'
+ },
+ {
+   "Latitude": 47.44835239,
+   "Longitude": -116.7761732,
+   "Title": "SUBMERGED VALLEY",
+   "Marker": '<a href="submergedvalley.html">Submerged Valley</a><br><br>'
+ },
+ {
+   "Latitude": 42.26487364,
+   "Longitude": -112.7632242,
+   "Title": "TWIN SPRINGS",
+   "Marker": '<a href="twinsprings.html">Twin Springs</a><br><br>'
+ },
+ {
+   "Latitude": 43.54764416,
+   "Longitude": -116.8023484,
+   "Title": "FROMAN'S FERRY",
+   "Marker": '<a href="fromansferry.html">Froman&apos;s Ferry</a><br><br>'
+ },
+ {
+   "Latitude": 42.50460029,
+   "Longitude": -114.1996943,
+   "Title": "CALDRON LINN",
+   "Marker": '<a href="caldronlinn.html">Caldron Linn</a><br><br>'
+ },
+ {
+   "Latitude": 47.39900322,
+   "Longitude": -116.6609867,
+   "Title": "THE MULLAN ROAD",
+   "Marker": '<a href="mullanroad.html">Mullan Road</a><br><br>'
+ },
+ {
+   "Latitude": 47.31813146,
+   "Longitude": -116.5868211,
+   "Title": "JOHN MULLAN",
+   "Marker": '<a href="johnmullan.html">John Mullan</a><br><br>'
+ },
+ {
+   "Latitude": 43.30359812,
+   "Longitude": -112.2697136,
+   "Title": "LAVA FORMATIONS", 
+   "Marker": '<a href="lavaformations.html">Lava Formations</a><br><br>'
+ },
+ {
+   "Latitude": 42.85932441,
+   "Longitude": -112.4351473,
+   "Title": "IDAHO STATE UNIVERSITY",
+   "Marker": '<a href="isu.html">Idaho State University</a><br><br>'
+},
+ {
+   "Latitude": 47.54601571,
+   "Longitude": -116.1314651,
+   "Title": "KELLOGG'S JACKASS",
+   "Marker": '<a href="kelloggsjackass.html">Kellogg&apos;s Jackass</a><br><br>'
+ },
+ {
+   "Latitude": 43.65869889,
+   "Longitude": -116.6568691,
+   "Title": "ALBERTSON COLLEGE OF IDAHO",
+   "Marker": '<a href="collegeofidaho.html">College of Idaho</a><br><br>'
+ },
+ {
+   "Latitude": 43.88832678,
+   "Longitude": -114.7435644,
+   "Title": "SALMON RIVER",
+   "Marker": '<a href="salmonriver292.html">Salmon River</a><br><br>'
+ },
+ {
+   "Latitude": 44.44486041,
+   "Longitude": -116.799747,
+   "Title": "AN EARLY INDUSTRY",
+   "Marker":  '<a href=earlyindustry.html">Early Industry</a><br><br>'
+ },
+ {
+   "Latitude": 45.80187829,
+   "Longitude": -116.2875899,
+   "Title": "NEZ PERCE WAR",
+   "Marker": '<a href="nezpercewar294.html">Nezperce War</a><br><br>'
+ },
+ {
+   "Latitude": 43.84422836,
+   "Longitude": -116.4673084,
+   "Title": "FREEZEOUT HILL",
+   "Marker": '<a href="freezeouthill.html">Freezeout Hill</a><br><br>'
+ },
+ {
+   "Latitude": 44.33286525,
+   "Longitude": -113.0827561,
+   "Title": "CHARCOAL KILNS",
+   "Marker": '<a href="charcoalkilns.html">Charcoal Kilns</a><br><br>'
+ },
+ {
+   "Latitude": 43.54899459,
+   "Longitude": -113.0080383,
+   "Title": "NUCLEAR REACTORS",
+   "Marker": '<a href="nuclearreactors.html">Nuclear Reactors</a><br><br>'
+ },
+ {
+   "Latitude": 45.84006714,
+   "Longitude": -116.2372376,
+   "Title": "SALMON RIVER",
+   "Marker": '<a href="salmonriver298.html">Salmon River</a><br><br>'
+ },
+ {
+   "Latitude": 42.88588725,
+   "Longitude": -114.9146638,
+   "Title": "FOSSIL BEDS",
+   "Marker": '<a href="fossilbeds.html">Fossil Beds</a><br><br>'
+ },
+ {
+   "Latitude": 43.82676528,
+   "Longitude": -111.9683898,
+   "Title": "MENAN BUTTES",
+   "Marker": '<a href="menanbuttes.html">Menan Buttes</a><br><br>' 
+ },
+ {
+   "Latitude": 43.88226776,
+   "Longitude": -114.6989512,
+   "Title": "ALEXANDER ROSS",
+   "Marker": '<a href="alexanderross.html">Alexander Ross</a><br><br>'
+ },
+ {
+   "Latitude": 44.48745759,
+   "Longitude": -114.2178652,
+   "Title": "MICHEL BOURDON",
+   "Marker": '<a href="michelbourdon.html">Michel Bourdon</a><br><br>'
+ },
+ {
+   "Latitude": 43.54898909,
+   "Longitude": -113.0080203,
+   "Title": "LOST RIVER",
+   "Marker": '<a href="lostriver.html">Lost River</a><br><br>'
+ },
+ {
+   "Latitude": 43.30115174,
+   "Longitude": -115.3152449,
+   "Title": "GOODALE'S CUTOFF",
+   "Marker": '<a href="goodalescutoff305.html">Goodalescutoff</a><br><br>'
+ },
+ {
+   "Latitude": 42.41252684,
+   "Longitude": -113.5781495,
+   "Title": "DIAMONDFIELD JACK",
+   "Marker": '<a href="diamondfieldjack.html">Diamondfield Jack</a><br><br>'
+ },
+ {
+   "Latitude": 46.47141007,
+   "Longitude": -115.8170799,
+   "Title": "CHINESE HANGING",
+   "Marker": '<a href="chinesehanging.html">Chinese Hanging</a><br><br>'
+ },
+ {
+   "Latitude": 46.35742499,
+   "Longitude": -116.7692128,
+   "Title": "WILLIAM CRAIG",
+   "Marker": '<a href="williamcraig.html">William Craig</a><br><br>'
+ },
+ {
+   "Latitude": 46.22251202,
+   "Longitude": -116.0093736,
+   "Title": "ASA SMITH MISSION",
+   "Marker": '<a href="asasmithmission.html ">Asa Smith Mission</a><br><br>'
+ },
+ {
+   "Latitude": 46.22249838,
+   "Longitude": -116.0093657,
+   "Title": "LONG CAMP",
+   "Marker": '<a href="longcamp.html">Long Camp</a><br><br>'
+ },
+ {
+   "Latitude": 45.02008328,
+   "Longitude": -113.6604083,
+   "Title": "MACDONALD'S BATTLE",
+   "Marker": '<a href="macdonaldsbattle.html">Macdonald&apos;s Battle</a><br><br>'
+ },
+ {
+   "Latitude": 45.61376297,
+   "Longitude": -116.2811485,
+   "Title": "SALMON RIVER CANYON",
+   "Marker": '<a href="salmonrivercanyon.html">Salmon River Canyon</a><br><br>'
+ },
+ {
+   "Latitude": 46.461982,
+   "Longitude": -116.992591,
+   "Title": "LEWIS CLARK STATE COLLEGE",
+   "Marker": '<a href="lewisclarkstatecollege.html">Lewis Clark State College</a><br><br>'
+ },
+ {
+   "Latitude": 43.79250089,
+   "Longitude": -111.1109291,
+   "Title": "TETON RANGE",
+   "Marker": '<a href="tetonrange.html">Teton Range</a><br><br>'
+ },
+ {
+   "Latitude": 46.50984394,
+   "Longitude": -116.5617857,
+   "Title": "INDIAN HOUSES",
+   "Marker": '<a href="indianhouses.html">Indian Houses</a><br><br>'
+},
+ {
+   "Latitude": 42.39154901,
+   "Longitude": -113.2920185,
+   "Title": "LAKE BONNEVILLE",
+   "Marker": '<a href="lakebonneville.html">Lake Bonneville</a><br><br>'
+ },
+ {
+   "Latitude": 42.06852468,
+   "Longitude": -112.9034159,
+   "Title": "LAKE BONNEVILLE",
+   "Marker": '<a href="lakebonneville.html">Lake Bonneville</a><br><br>'
+  },
+ {
+   "Latitude": 43.59116918,
+   "Longitude": -115.9988584,
+   "Title": "MORE'S CREEK",
+   "Marker": '<a href="morescreek.html">More&apos;s Creek</a><br><br>'
+ },
+ {
+   "Latitude": 42.1839803,
+   "Longitude": -111.4013091,
+   "Title": "BRITISH SETTLERS",
+   "Marker": '<a href="britishsettlers.html">British Settlers</a><br><br>'
+ },
+ {
+   "Latitude": 48.25677554,
+   "Longitude": -116.324155,
+   "Title": "LAKE PEND OREILLE",
+   "Marker": '<a href="lakependoreille.html">Lake Pend Oreille</a><br><br>'
+ },
+ {
+   "Latitude": 48.65257644,
+   "Longitude": -116.3451787,
+   "Title": "GLACIAL LAKES",
+   "Marker": '<a href="glaciallakes.html">Glacial Lakes</a><br><br>'
+},
+ {
+   "Latitude": 47.52866658,
+   "Longitude": -116.0502554,
+   "Title": "SUNSHINE MINE DISASTER",
+   "Marker": '<a href="sunshineminedisaster.html">Sunshine Mine Disaster</a><br><br>'
+ },
+ {
+   "Latitude": 43.81594887,
+   "Longitude": -112.1868609,
+   "Title": "MARKET LAKE",
+   "Marker": '<a href="marketlake.html">Market Lake</a><br><br>'
+},
+ {
+   "Latitude": 44.06955023,
+   "Longitude": -116.9347498,
+   "Title": "FRANCOIS PAYETTE",
+   "Marker": '<a href="francoispayette.html">FRANCOIS PAYETTE</a><br><br>'
+ },
+ {
+   "Latitude": 44.95953271,
+   "Longitude": -113.6443202,
+   "Title": "LEWIS AND CLARK",
+   "Marker": '<a href="lewisandclark325.html">Lewis and Clark</a><br><br>'
+ },
+ {
+   "Latitude": 42.6206058,
+   "Longitude": -114.4494192,
+   "Title": "EMIGRANT ROAD",
+   "Marker": '<a href="emigrantroad.html">Emigrant Road</a><br><br>'
+ },
+ {
+   "Latitude": 45.80191951,
+   "Longitude": -116.2875703,
+   "Title": "WHITE BIRD GRADE",
+   "Marker": '<a href="whitebirdgrade.html">Whitebird Grade</a><br><br>'
+},
+ {
+   "Latitude": 44.22619014,
+   "Longitude": -114.9292391,
+   "Title": "BEARS PLOUGHED FIELD",
+   "Marker":  '<a href="bearsploughedfield.html">BEARS PLOUGHED FIELD</a><br><br>'
+ },
+ {
+   "Latitude": 43.71373888,
+   "Longitude": -114.3752496,
+   "Title": "SKI LIFTS",
+   "Marker": '<a href="skilifts.html">Ski Lifts</a><br><br>'
+ },
+ {
+   "Latitude": 42.69905029,
+   "Longitude": -114.8568131,
+   "Title": "FISHING FALLS",
+   "Marker": '<a href="fishingfalls.html">Fishing Falls</a><br><br>'
+ },
+ {
+   "Latitude": 46.23150577,
+   "Longitude": -116.4626198,
+   "Title": "CRAIGMONT",
+   "Marker": '<a href="craigmont.html">Craigmont</a><br><br>'
+ },
+ {
+   "Latitude": 46.4420647,
+   "Longitude": -116.8930752,
+   "Title": "NEZ PERCE VILLAGE",
+   "Marker": '<a href="nezpercevillage.html">Nezperce Village</a><br><br>'
+ },
+ {
+   "Latitude": 46.50972998,
+   "Longitude": -114.779971,
+   "Title": "WHITEHOUSE POND",
+   "Marker": '<a href="whitehousepond.html">Whitehouse Pond</a><br><br>'
+},
+ {
+   "Latitude": 46.59532844,
+   "Longitude": -114.5999512,
+   "Title": "LOLO TRAIL CROSSING",
+   "Marker": '<a href="lolotrailcrossing.html">Lolo Trail Crossing</a><br><br>'
+ },
+ {
+   "Latitude": 42.23579687,
+   "Longitude": -111.2333185,
+   "Title": "BIG HILL",
+   "Marker": '<a href="bighill.html">Big Hill</a><br><br>'
+ },
+ {
+   "Latitude": 43.99418136,
+   "Longitude": -116.9354853,
+   "Title": "SALMON FESTIVAL",
+   "Marker": '<a href="salmonfestival.html">Salmon Festival</a><br><br>'
+ },
+ {
+   "Latitude": 42.64989092,
+   "Longitude": -111.8790031,
+   "Title": "CHESTERFIELD",
+   "Marker": '<a href="chesterfield.html">Chesterfield</a><br><br>'
+ },
+ {
+   "Latitude": 42.69749682,
+   "Longitude": -112.9523063,
+   "Title": "OREGON TRAIL",
+   "Marker": '<a href="lewisandclark338.html">Lewis and Clark</a><br><br>'
+ },
+ {
+   "Latitude": 42.61211258,
+   "Longitude": -113.1531346,
+   "Title": "EMIGRANT TRAILS",
+   "Marker": '<a href="emigranttrails.html">Emigrant Trails</a><br><br>'
+ },
+ {
+   "Latitude": 42.66230187,
+   "Longitude": -114.2850602,
+   "Title": "HUNT",
+   "Marker": '<a href="hunt.html">Hunt</a><br><br>'
+ },
+ {
+   "Latitude": 42.67438705,
+   "Longitude": -113.5926126,
+   "Title": "MINIDOKA DAM",
+   "Marker": '<a href="minidokadam.html">Minidoka Dam</a><br><br>'
+ },
+ {
+   "Latitude": 42.53334101,
+   "Longitude": -114.3055187,
+   "Title": "ROCK CREEK STATION",
+   "Marker": '<a href="rockcreekstation.html">Rock Creek Station</a><br><br>'
+ },
+ {
+   "Latitude": 43.53904762,
+   "Longitude": -116.093129,
+   "Title": "DIVERSION DAM",
+   "Marker": '<a href="diversiondam.html">Diversion Dam</a><br><br>'
+ },
+ {
+   "Latitude": 42.25454219,
+   "Longitude": -113.8819581,
+   "Title": "CITY OF ROCKS",
+   "Marker": '<a href="cityofrocks.html">City of Rocks</a><br><br>'
+ },
+ {
+   "Latitude": 43.88324427,
+   "Longitude": -111.538967,
+   "Title": "TETON FLOOD",
+   "Marker": '<a href="tetonflood.html">Teton Flood</a><br><br>'
+ },
+ {
+   "Latitude": 46.13582618,
+   "Longitude": -115.954332,
+   "Title": "LOOKING GLASS",
+   "Marker": '<a href="lookingglass.html">Looking Glass</a><br><br>'
+ },
+ {
+   "Latitude": 47.71515406,
+   "Longitude": -116.9480378,
+   "Title": "TREATY ROCK",
+   "Marker": '<a href="treatyrock.html">Treaty Rock</a><br><br>'
+ },
+ {
+   "Latitude": 46.36970205,
+   "Longitude": -116.72478,
+   "Title": "SAINT JOSEPH'S MISSION",
+   "Marker": '<a href="saintjosephsmission.html">Saint Joseph&apos;s Mission</a><br><br>'
+ },
+ {
+   "Latitude": 47.95222331,
+   "Longitude": -116.6031141,
+   "Title": "FARRAGUT STATE PARK",
+   "Marker": '<a href="farragutstatepark.html">Farragut State Park</a><br><br>'
+ },
+ {
+   "Latitude": 47.9478559,
+   "Longitude": -116.6859799,
+   "Title": "PEND OREILLE CITY",
+   "Marker": '<a href="pendoreillecity.html">Pend Oreille City</a><br><br>'
+ },
+ {
+   "Latitude": 45.90444132,
+   "Longitude": -116.0825972,
+   "Title": "MOUNT IDAHO",
+   "Marker": '<a href="mountidaho.html">Mount Idaho</a><br><br>'
+ },
+ {
+   "Latitude": 43.30088092,
+   "Longitude": -115.3153832,
+   "Title": "CASTLE ROCK",
+   "Marker": '<a href="castlerock.html">Castlerock</a><br><br>'
+ },
+ {
+   "Latitude": 43.37962646,
+   "Longitude": -113.7203869,
+   "Title": "GOODALE'S CUTOFF",
+   "Marker": '<a href="goodalescutoff354.html">Goodalescutoff</a><br><br>'
+ },
+ {
+   "Latitude": 44.1402276,
+   "Longitude": -113.905002,
+   "Title": "EARTHQUAKES",
+   "Marker": '<a href="earthquakes.html">Earthquakes</a><br><br>'
+ },
+ {
+   "Latitude": 43.41503578,
+   "Longitude": -116.7049247,
+   "Title": "GIVENS SPRINGS",
+   "Marker":  '<a href="givenssprings.html">Givens Springs</a><br><br>'
+ },
+ {
+   "Latitude": 43.55201603,
+   "Longitude": -116.0985322,
+   "Title": "BEAVER DICK'S FERRY",
+   "Marker": '<a href="beaverdicksferry.html">Beaver Dick&apos;s Ferry</a><br><br>'
+ },
+ {
+   "Latitude": 43.72470458,
+   "Longitude": -116.7991837,
+   "Title": "LOWER BOISE",
+   "Marker":  '<a href="lowerboise.html">Lower Boise</a><br><br>'
+ },
+ {
+   "Latitude": 42.97685045,
+   "Longitude": -111.3772796,
+   "Title": "JOHN GREY",
+   "Marker": '<a href="johngrey.html">John Grey</a><br><br>'
+ },
+ {
+   "Latitude": 43.92062555,
+   "Longitude": -114.8150869,
+   "Title": "SAWTOOTH CITY",
+   "Marker":  '<a href="sawtoothcity.html">Sawtooth City</a><br><br>'
+ },
+ {
+   "Latitude": 43.54290971,
+   "Longitude": -112.3531967,
+   "Title": "ELEPHANT HUNTERS",
+   "Marker": '<a href="elephanthunters.html">Elephant Hunters</a><br><br>'
+ },
+ {
+   "Latitude": 47.47716934,
+   "Longitude": -115.9331096,
+   "Title": "WALLACE",
+   "Marker": '<a href="wallace.html">Wallace</a><br><br>'
+ },
+ {
+   "Latitude": 45.82766017,
+   "Longitude": -115.439866,
+   "Title": "NEZ PERCE TRAIL",
+   "Marker": '<a href="nezpercetrail369.html">Nezperce Trail</a><br><br>'
+ },
+ {
+   "Latitude": 45.81197374,
+   "Longitude": -115.4735931,
+   "Title": "BUFFALO PIT",
+   "Marker": '<a href="buffalopit.html">Buffalo Pit</a><br><br>'
+ },
+ {
+   "Latitude": 46.20068429,
+   "Longitude": -116.4147679,
+   "Title": "RAILROAD TRESTLES",
+   "Marker": '<a href="railroadtrestles.html">Railroad Trestles</a><br><br>'
+},
+ {
+   "Latitude": 46.135798,
+   "Longitude": -116.1682067,
+   "Title": "CAMAS PRAIRIE",
+   "Marker": '<a href="camasprairie.html">Camas Prairie</a><br><br>'
+ },
+ {
+   "Latitude": 47.46082251,
+   "Longitude": -115.7342617,
+   "Title": "WILLOW CREEK SLIDE",
+   "Marker": '<a href="willowcreekslide.html">Willow Creek Slide</a><br><br>'
+ },
+ {
+   "Latitude": 44.62703382,
+   "Longitude": -116.4398657,
+   "Title": "MESA ORCHARDS",
+   "Marker": '<a href="mesaorchards.html">Mesa Orchards</a><br><br>'
+ },
+ {
+   "Latitude": 43.47876189,
+   "Longitude": -116.1082501,
+   "Title": "OREGON TRAIL",
+   "Marker": '<a href="oregontrail375.html">Oregon Trail</a><br><br>'
+ },
+ {
+   "Latitude": 43.59116918,
+   "Longitude": -115.9988584,
+   "Title": "ARROWROCK DAM",
+   "Marker": '<a href="arrowrockdam.html">Arrowrock Dam</a><br><br>'
+ },
+ {
+   "Latitude": 43.92489932,
+   "Longitude": -116.4156653,
+   "Title": "BLACK CANYON DAM",
+   "Marker": '<a href="blackcanyondam.html">Black Canyon Dam</a><br><br>'
+ },
+ {
+   "Latitude": 44.82846401,
+   "Longitude": -116.9034163,
+   "Title": "SEVEN DEVILS MINES",
+   "Marker": '<a href="sevendevilsmines.html">Seven Devils Mines</a><br><br>'
+ },
+ {
+   "Latitude": 43.47769579,
+   "Longitude": -116.1069071,
+   "Title": "BASQUE COUNTRY",
+   "Marker": '<a href="basquecountry.html">Basque Country</a><br><br>'
+ },
+ {
+   "Latitude": 43.15865437,
+   "Longitude": -116.5087147,
+   "Title": "WAR EAGLE MINES",
+   "Marker": '<a href="wareaglemines.html">War Eagle Mines</a><br><br>'
+ },
+ {
+   "Latitude": 42.77878403,
+   "Longitude": -112.883167,
+   "Title": "AMERICAN FALLS",
+   "Marker": '<a href="americanfalls274.html">American Falls</a><br><br>'
+ },
+ {
+   "Latitude": 42.03083951,
+   "Longitude": -111.4000616,
+   "Title": "BEAR LAKE",
+   "Marker": '<a href="bearlake384.html">Bear Lake</a><br><br>'
+ },
+ {
+   "Latitude": 42.65465274,
+   "Longitude": -111.60154,
+   "Title": "HOOPER SPRING",
+   "Marker": '<a href="hooperspring.html">Hooper Spring</a><br><br>'
+ },
+ {
+   "Latitude": 42.22536927,
+   "Longitude": -111.4009688,
+   "Title": "PARIS TABERNACLE",
+   "Marker": '<a href="paristabernacle.html">Paris Tabernacle</a><br><br>'
+ },
+ {
+   "Latitude": 42.01823666,
+   "Longitude": -111.8042547,
+   "Title": "HATCH HOUSE",
+   "Marker": '<a href="hatchhouse.html">Hatch House</a><br><br>'
+ },
+ {
+   "Latitude": 44.67362929,
+   "Longitude": -111.4091547,
+   "Title": "SAWTELL'S RANCH",
+   "Marker": '<a href="sawtellsranch.html">Sawtell&apos;s Ranch</a><br><br>'
+ },
+ {
+   "Latitude": 44.28438037,
+   "Longitude": -111.4630578,
+   "Title": "CALDERA LOOKOUT",
+   "Marker": '<a href="calderalookout.html">Caldera Lookout</a><br><br>'
+ },
+ {
+   "Latitude": 42.5651902,
+   "Longitude": -114.3007822,
+   "Title": "HANSEN BRIDGE",
+   "Marker": '<a href="hansenbridge.html">Hansen Bridge</a><br><br>'
+ },
+ {
+   "Latitude": 44.18387672,
+   "Longitude": -111.4365883,
+   "Title": "VOLCANIC CALDERAS",
+   "Marker": '<a href="volcaniccalderas.html">Volcanic Calderas</a><br><br>'
+},
+ {
+   "Latitude": 43.17802762,
+   "Longitude": -114.3288459,
+   "Title": "MAGIC DAM",
+   "Marker": '<a href="magicdam.html">Magic Dam</a><br><br>'
+ },
+ {
+   "Latitude": 43.30685827,
+   "Longitude": -115.2797779,
+   "Title": "GOLD MINES",
+   "Marker": '<a href="goldmines.html">Gold Mines</a><br><br>'
+ },
+ {
+   "Latitude": 43.60265245,
+   "Longitude": -116.1935164,
+   "Title": "BOISE STATE UNIVERSITY",
+   "Marker": '<a href="bsu.html">Boise State University</a><br><br>'
+ },
+ {
+   "Latitude": 43.82607811,
+   "Longitude": -111.7793756,
+   "Title": "BRIGHAM YOUNG UNIVERSITY - ID",
+   "Marker": '<a href="rickscollege.html">Ricks College</a><br><br>'
+ },
+ {
+   "Latitude": 44.22623318,
+   "Longitude": -114.9292466,
+   "Title": "STANLEY RANGER STATION",
+   "Marker": '<a href="stanleyrangerstation.html">Stanley Ranger Station</a><br><br>'
+ },
+ {
+   "Latitude": 42.59851861,
+   "Longitude": -114.454271,
+   "Title": "COLLEGE OF SOUTHERN IDAHO",
+   "Marker": '<a href="csi.html">College of Southern Idaho</a><br><br>'
+ },
+ {
+   "Latitude": 42.92661542,
+   "Longitude": -114.4118351,
+   "Title": "SHOSHONE HISTORIC DISTRICT",
+   "Marker": '<a href="shoshonehistoricdistrict.html">Shoshone Historic District</a><br><br>'
+ },
+ {
+   "Latitude": 43.33853666,
+   "Longitude": -114.4342723,
+   "Title": "MAGIC RESERVOIR",
+   "Marker": '<a href="magicreservoir.html">Magic Reservoir</a><br><br>'
+ },
+ {
+   "Latitude": 43.59917464,
+   "Longitude": -116.5134052,
+   "Title": "NORTHWEST NAZARENE UNIVERSITY",
+   "Marker": '<a href="nnu.html">Northwest Nazarene University</a><br><br>'
+ },
+ {
+   "Latitude": 44.25887362,
+   "Longitude": -114.4018728,
+   "Title": "CLAYTON SMELTER",
+   "Marker": '<a href="claytonsmelter.html">Clayton Smelter</a><br><br>'
+ },
+ {
+   "Latitude": 46.46194188,
+   "Longitude": -117.0145795,
+   "Title": "LEWISTON HILL",
+   "Marker": '<a href="lewistonhill.html">Lewiston Hill</a><br><br>'
+ },
+ {
+   "Latitude": 46.46194188,
+   "Longitude": -117.0145795,
+   "Title": "STEAMBOATS",
+   "Marker": '<a href="steamboats.html">Steamboats</a><br><br>'
+ },
+ {
+   "Latitude": 46.33211685,
+   "Longitude": -116.597583,
+   "Title": "RAILROAD TUNNELS",
+   "Marker": '<a href="railroadtunnels.html">Railroad Tunnels</a><br><br>'
+ },
+ {
+   "Latitude": 44.72918599,
+   "Longitude": -116.4386395,
+   "Title": "OLD RAILROADS",
+   "Marker": '<a href="oldrailroads.html">Old Railroads</a><br><br>'
+ },
+ {
+   "Latitude": 47.46082251,
+   "Longitude": -115.7342617,
+   "Title": "LEAD-SILVER MINES",
+   "Marker": '<a href="leadsilvermines.html">Lead-Silver Mines</a><br><br>'
+ },
+ {
+   "Latitude": 47.97298088,
+   "Longitude": -116.5667894,
+   "Title": "BAYVIEW LIME KILNS",
+   "Marker": '<a href="bayviewlimekilns.html">Bayview Lime Kilns</a><br><br>'
+},
+ {
+   "Latitude": 47.51226189,
+   "Longitude": -115.8598317,
+   "Title": "FRISCO MILL",
+   "Marker": '<a href="friscomill.html">Frisco Mill</a><br><br>'
+ },
+ {
+   "Latitude": 47.05546733,
+   "Longitude": -116.8613128,
+   "Title": "McCROSKEY PARK",
+   "Marker": '<a href="mccroskeypark.html">McCroskey Park</a><br><br>'
+ },
+ {
+   "Latitude": 47.51871422,
+   "Longitude": -115.8248166,
+   "Title": "BURKE",
+   "Marker": '<a href="burke.html">Burke</a><br><br>'
+ },
+ {
+   "Latitude": 44.17725674,
+   "Longitude": -112.2402291,
+   "Title": "NEZ PERCE WAR",
+   "Marker": '<a href="mccroskeypark.html">McCroskey Park</a><br><br>'
+ },
+ {
+   "Latitude": 43.52841596,
+   "Longitude": -112.7138895,
+   "Title": "THREE BUTTES",
+   "Marker": '<a href="threebuttes.html">Three Buttes</a><br><br>'
+ },
+ {
+   "Latitude": 44.33285999,
+   "Longitude": -113.0827377,
+   "Title": "COTE'S DEFILE",
+   "Marker": '<a href="cotesdefile.html">Cote&apos;s Defile</a><br><br>'
+ },
+ {
+   "Latitude": 47.4624908,
+   "Longitude": -115.708333,
+   "Title": "MURRAY GOLD FIELDS",
+   "Marker": '<a href="murraygoldfields.html">Murray Gold Fields</a><br><br>'
+ },
+ {
+   "Latitude": 42.37801111,
+   "Longitude": -111.7137233,
+   "Title": "RANGE WARS",
+   "Marker": '<a href="rangewars.html">Range Wars</a><br><br>'
+ },
+ {
+   "Latitude": 42.16404599,
+   "Longitude": -111.832007,
+   "Title": "OLD DELTA SEDIMENTS",
+   "Marker": '<a href="olddeltasediments.html">Old Delta Sediments</a><br><br>'
+ },
+ {
+   "Latitude": 42.97685045,
+   "Longitude": -111.3772796,
+   "Title": "CARIBOO MOUNTAIN",
+   "Marker": '<a href="cariboomountain.html">Cariboo Mountain</a><br><br>'
+ },
+ {
+   "Latitude": 44.47143063,
+   "Longitude": -114.2154095,
+   "Title": "BISON JUMP",
+   "Marker": '<a href="bisonjump.html">Bison Jump</a><br><br>'
+ },
+ {
+   "Latitude": 44.17356151,
+   "Longitude": -115.2498595,
+   "Title": "EMILE GRANDJEAN",
+   "Marker": '<a href="emilegrandjean.html">Emile Grandjean</a><br><br>'
+ },
+ {
+   "Latitude": 43.52842104,
+   "Longitude": -112.7138707,
+   "Title": "BIG BUTTE",
+   "Marker": '<a href="bigbutte.html">Big Butte</a><br><br>'
+ },
+ {
+   "Latitude": 44.07240552,
+   "Longitude": -115.528438,
+   "Title": "EMMA EDWARDS",
+   "Marker": '<a href="emmaedwards.html">Emma Edwards</a><br><br>'
+ },
+ {
+   "Latitude": 44.08252579,
+   "Longitude": -115.6101712,
+   "Title": "LOWMAN",
+   "Marker": '<a href="lowman.html">Lowman</a><br><br>'
+ },
+ {
+   "Latitude": 42.31759817,
+   "Longitude": -111.3079944,
+   "Title": "BANK ROBBERS",
+   "Marker": '<a href="bankrobbers.html">Bank Robbers</a><br><br>'
+ },
+ {
+   "Latitude": 43.84421491,
+   "Longitude": -116.4673158,
+   "Title": "PEARL",
+   "Marker": '<a href="pearl.html">Pearl</a><br><br>'
+ },
+ {
+   "Latitude": 45.48439062,
+   "Longitude": -113.978738,
+   "Title": "NEZ PERCE TRAIL",
+   "Marker": '<a href="nezpercetrail448.html">Nezperce Trail</a><br><br>'
+ },
+ {
+   "Latitude": 42.41419674,
+   "Longitude": -113.3990068,
+   "Title": "IDAHOME",
+   "Marker": '<a href="idahome.html">Idahhome</a><br><br>'
+ },
+ {
+   "Latitude": 44.61383011,
+   "Longitude": -111.3353471,
+   "Title": "PIERRE J. DESMET",
+   "Marker":  '<a href="pierrejdesmet.html">Pierre J. Desmet</a><br><br>'
+ },
+ {
+   "Latitude": 43.15858554,
+   "Longitude": -116.5086808,
+   "Title": "DIAMOND GULCH",
+   "Marker": '<a href="diamondgulch.html">Diamond Gulch</a><br><br>'
+ },
+ {
+   "Latitude": 43.69041344,
+   "Longitude": -116.6932089,
+   "Title": "EMIGRANT CROSSING",
+   "Marker": '<a href="emigrantcrossing.html">EMIGRANT CROSSING</a><br><br>' 
+ },
+ {
+   "Latitude": 42.23579687,
+   "Longitude": -111.2333185,
+   "Title": "MCAULEY'S ROAD",
+   "Marker": '<a href="mcauleysroad.html">McAuley&apos;s Road</a><br><br>'
+ },
+ {
+   "Latitude": 44.35646378,
+   "Longitude": -111.4095658,
+   "Title": "HARRIMAN WILDLIFE REFUGE",
+   "Marker": '<a href="harrimanwildlife.html">Harriman Wildlife Refuge</a><br><br>' 
+ },
+ {
+   "Latitude": 44.30850033,
+   "Longitude": -111.4555451,
+   "Title": "HARRIMAN STATE PARK",
+   "Marker": '<a href="harrimanstatepark.html">Harriman State Park</a><br><br>'
+ },
+ {
+   "Latitude": 46.37962,
+   "Longitude": -116.177907,
+   "Title": "GOLD RUSH FERRY",
+   "Marker": '<a href="goldrushferry.html">Goldrush Ferry</a><br><br>'
+ },
+ {
+   "Latitude": 47.88829697,
+   "Longitude": -116.7228789,
+   "Title": "LOGGING RAILROADS",
+   "Marker": '<a href="loggingrailroads.html">Logging Railroads</a><br><br>'
+ },
+ {
+   "Latitude": 43.97043713,
+   "Longitude": -116.8197606,
+   "Title": "NEW PLYMOUTH",
+   "Marker": '<a href="newplymouth.html">New Plymouth</a><br><br>'
+ },
+ {
+   "Latitude": 43.87167827,
+   "Longitude": -114.6551791,
+   "Title": "GALENA",
+   "Marker": '<a href="galena.html">Galena</a><br><br>'
+ },
+ {
+   "Latitude": 46.50644691,
+   "Longitude": -116.5525427,
+   "Title": "LENORE TRAM",
+   "Marker": '<a href="lenoretram.html">Lenore Tram</a><br><br>'
+ },
+ {
+   "Latitude": 44.25423536,
+   "Longitude": -116.9579134,
+   "Title": "11000 YRS OF INDIAN OCCUPATION",
+   "Marker": '<a href="11000yearsofindianoccupation.html">11,000 years of Indian Occupation</a><br><br>'
+ },
+ {
+   "Latitude": 46.02652786,
+   "Longitude": -116.328724,
+   "Title": "LEWIS AND CLARK",
+   "Marker": '<a href="lewisandclark488.html">Lewis and Clark</a><br><br>'
+ },
+ {
+   "Latitude": 46.20072795,
+   "Longitude": -116.414823,
+   "Title": "LEWIS AND CLARK",
+   "Marker": '<a href="lewisandclark489.html">Lewis and Clark</a><br><br>'
+ },
+ {
+   "Latitude": 46.02513231,
+   "Longitude": -116.3279529,
+   "Title": "NEZ PERCE WAR- FOSTER'S GRAVESITE",
+   "Marker": '<a href="nezpercewar500.html">Nezperce War</a><br><br>' 
+ },
+ {
+   "Latitude": 48.65257071,
+   "Longitude": -116.3451839,
+   "Title": "DAVID THOMPSON",
+   "Marker": '<a href="davidthompson.html">David Thompson</a><br><br>'
+
+ }];
+//alert(1);
+var i=0;
+for (let i = 0; i < data.length; i++)
+    {
+getLat=data[i].Latitude;
+getLong=data[i].Longitude;
+getPlace=data[i].Title;
+getUrl=data[i].Marker;
+locLong=locLong*(-1);
+dist2=distance(getLat, getLong, locLat, locLong);
+
+var twoPlacedFloat = parseFloat(dist3).toFixed(2);
+if(dist2<dist3){dist3=dist2; nearest=getPlace; gurl=getUrl;
+nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";}
+    }
+
+nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";
+   }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  locLong=position.coords.longitude;
+  locLat=position.coords.latitude;
+}
+function distance(lat1, lon1, lat2, lon2) {
+        var radlat1 = Math.PI * lat1/180;
+        var radlat2 = Math.PI * lat2/180;
+        var theta = lon1-lon2;
+        var radtheta = Math.PI * theta/180;
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        dist = Math.acos(dist);
+        dist = dist * 180/Math.PI;
+        dist = dist * 60 * 1.1515;
+       // if (unit=="K") { dist = dist * 1.609344 }
+       // if (unit=="N") { dist = dist * 0.8684 }
+        return dist;
+}
+//function getUrl(){}
+</script>
+</head>
+<body onload="getLocation()">
+<center>
+<img src="closest.jpg" alt="Closest Marker" width="300" height="250"/>
+
+ <div>
+      <button onclick="getData()">Find closest Marker</button>
+      <div id="x"></div>
+   </div>   
+<br><br>
+<div>      
+      <div id="nearestgurl"></div>
+   </div>  
+
+</center>
+ </body>
+</html>
