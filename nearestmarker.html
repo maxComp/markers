@@ -4,6 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="parkscss2.css" />
+    <style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
 <script>
 var getLat=0;
 var getLong=0;
@@ -335,12 +341,7 @@ var data = [
    "Title": "OWYHEE COUNTRY",
    "Marker": '<a href="owyheecounty.html">Owyhee Country</a><br><br>'  
  },
-{
-  "Latitude": 42.9275,
-  "Longitude": -114.7329,
-  "Title": "Home",
-  "Marker": '<a href="x.html">Home</a><br><br>'
-},
+
 {
    "Latitude": 43.59329131,
    "Longitude": -116.3944726,
@@ -1554,8 +1555,10 @@ var data = [
    "Marker": '<a href="davidthompson.html">David Thompson</a><br><br>'
 
  }];
+
 //alert(1);
 var i=0;
+//alert(data.length);
 for (let i = 0; i < data.length; i++)
     {
 getLat=data[i].Latitude;
@@ -1567,7 +1570,9 @@ dist2=distance(getLat, getLong, locLat, locLong);
 
 var twoPlacedFloat = parseFloat(dist3).toFixed(2);
 if(dist2<dist3){dist3=dist2; nearest=getPlace; gurl=getUrl;
-nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";}
+nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";
+ ;}
+
     }
 
 nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";
@@ -1575,6 +1580,7 @@ nearestgurl.innerHTML=gurl  + twoPlacedFloat + " Miles away ";
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+   // x.innerHTML = "got here";
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -1602,18 +1608,20 @@ function distance(lat1, lon1, lat2, lon2) {
 </script>
 </head>
 <body onload="getLocation()">
-<center>
+
 <img src="closest.jpg" alt="Closest Marker" width="300" height="250"/>
 
- <div>
-      <button onclick="getData()">Find closest Marker</button>
-      <div id="x"></div>
-   </div>   
-<br><br>
-<div>      
-      <div id="nearestgurl"></div>
-   </div>  
+<div style="display: flex; justify-content: center; align-items: center;">
 
-</center>
+      <button onclick="getData()">Find closest Marker</button>
+         </div>
+<div id="x"  style="display: flex; justify-content: center; align-items: center;"></div>
+
+<br><br>
+<div id="nearestgurl" >
+
+   </div>
+
+
  </body>
 </html>
