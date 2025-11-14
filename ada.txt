@@ -1,0 +1,54 @@
+ {
+   "Latitude": 43.602667,
+   "Longitude": -116.1935163,
+   "Title": "AIRMAIL SERVICE",
+   "Marker": "<a href='airmailservice.html'>Air Mail</a><br><br>"
+ },
+ {
+   "Latitude": 43.60265245,
+   "Longitude": -116.1935164,
+   "Title": "BOISE STATE UNIVERSITY",
+   "Marker": '<a href="bsu.html">Boise State University</a><br><br>'
+ },
+{
+   "Latitude": 43.55205933,
+   "Longitude": -116.0985302,
+   "Title": "THE OREGON TRAIL",
+   "Marker": '<a href="theoregontrail.html">The Oregon Trail</a><br><br>'
+ },
+{
+   "Latitude": 43.55201603,
+   "Longitude": -116.0985322,
+   "Title": "BEAVER DICK'S FERRY",
+   "Marker": '<a href="beaverdicksferry.html">Beaver Dick&apos;s Ferry</a><br><br>'
+ },
+{
+   "Latitude": 43.59329131,
+   "Longitude": -116.3944726,
+   "Title": "INITIAL POINT",
+   "Marker": '<a href="initialpoint.html">Initial Point</a><br><br> '
+ },
+{
+   "Latitude": 43.47769579,
+   "Longitude": -116.1069071,
+   "Title": "BASQUE COUNTRY",
+   "Marker": '<a href="basquecountry.html">Basque Country</a><br><br>'
+ },
+{
+   "Latitude": 43.59116918,
+   "Longitude": -115.9988584,
+   "Title": "MORE'S CREEK",
+   "Marker": '<a href="morescreek.html">More&apos;s Creek</a><br><br>'
+ },
+{
+   "Latitude": 43.53904762,
+   "Longitude": -116.093129,
+   "Title": "DIVERSION DAM",
+   "Marker": '<a href="diversiondam.html">Diversion Dam</a><br><br>'
+ },
+{
+   "Latitude": 43.59116918,
+   "Longitude": -115.9988584,
+   "Title": "ARROWROCK DAM",
+   "Marker": '<a href="arrowrockdam.html">Arrowrock Dam</a><br><br>'
+ },
